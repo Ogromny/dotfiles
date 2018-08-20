@@ -17,18 +17,18 @@
 ;==========================================================
 
 [colors]
-black = #2E3440
-white = #D8DEE9
-grey = #434C5E
-red = #BF616A
-green = #A3BE8C
-blue = #5E81AC
-pink = #B48EAD
-yellow = #EBCB8B
-orange = #D08770
+black  = ${xrdb:color0}
+white  = ${xrdb:color4}
+grey   = ${xrdb:color3}
+red    = ${xrdb:color11}
+green  = ${xrdb:color14}
+blue   = ${xrdb:color10}
+pink   = ${xrdb:color15}
+yellow = ${xrdb:color13}
+orange = ${xrdb:color12}
 
-background = #E52E3440
-foreground = ${colors.black}
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
 
 [bar/default]
 width = 100%
@@ -36,8 +36,7 @@ height = 36
 
 fixed-center = true
 
-font-0 = "FuraMono Nerd Font Mono:size=18:style=Bold;4"
-font-1 = "FuraMono Nerd Font Mono:size=20:style=Bold;4"
+font-0 = "FuraMono Nerd Font Mono:size=18"
 
 #override-redirect = true
 vm-restack = i3
@@ -51,15 +50,15 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-line-size = 6
+line-size = 4
 
 modules-left = i3
 modules-center = xwindow 
-modules-right = alsa memory wlan temperature battery date
+modules-right = alsa temperature battery date
 
 tray-position = right
 tray-maxsize = 32
-tray-padding = 5
+tray-padding = 10
 
 [module/xwindow]
 type = internal/xwindow
@@ -74,25 +73,30 @@ index-sort = true
 enable-scroll = false
 wrapping-scroll = false
 
-format = <label-state>
-format-background = ${colors.white}
+format = <label-mode> <label-state>
+format-underline = ${colors.white}
 
-label-focused = %{T2}%name%
-label-focused-background = ${colors.white}
+label-mode = %mode%
+label-mode-foreground = ${colors.red}
+label-mode-underline = ${colors.red}
+label-mode-padding = 1
+
+label-focused = %name%
+label-focused-underline = ${colors.white}
 label-focused-padding = 1
 
-label-unfocused = %{T2}%name%
-label-unfocused-background = ${colors.grey}
+label-unfocused = %name%
+label-unfocused-underline = ${colors.grey}
 label-unfocused-padding = 1
 
-label-visible = %{T2}%name%
+label-visible = %name%
 label-visible-foreground = ${colors.white}
-label-visible-background = ${colors.blue}
+label-visible-underline = ${colors.blue}
 label-visible-padding = 1
 
-label-urgent = %{T2}%name%
+label-urgent = %name%
 label-urgent-foreground = ${colors.white}
-label-urgent-background = ${colors.red}
+label-urgent-underline = ${colors.red}
 label-urgent-padding = 1
 
 label-separator = %{O20}
@@ -102,7 +106,7 @@ type = internal/memory
 interval = 2
 
 label = %gb_used% / %gb_total%
-label-background = ${colors.white}
+label-underline = ${colors.white}
 label-padding = 1
 
 [module/wlan]
@@ -111,11 +115,11 @@ interface = wlp3s0
 interval = 3.0
 
 label-connected = %essid%
-label-connected-background = ${colors.pink}
+label-connected-underline = ${colors.pink}
 label-connected-padding = 1
 
 label-disconnected = Disconnected
-label-disconnected-background = ${colors.red}
+label-disconnected-underline = ${colors.red}
 label-disconnected-padding = 1
 
 [module/date]
@@ -126,18 +130,18 @@ time = "%H:%M:%S"
 time-alt = "%d/%m/%Y %H:%M:%S"
 
 label = %time%
-label-background = ${colors.blue}
+label-underline = ${colors.blue}
 label-padding = 1
 
 [module/alsa]
 type = internal/alsa
 
 label-volume = %percentage%%
-label-volume-background = ${colors.yellow}
+label-volume-underline = ${colors.yellow}
 label-volume-padding = 1
 
 label-muted = %percentage%%
-label-muted-background = ${colors.red}
+label-muted-underline = ${colors.red}
 label-muted-padding = 1
 
 [module/battery]
@@ -147,14 +151,14 @@ adapter = ADP1
 full-at = 98
 
 label-discharging = %percentage%% (%time%)
-label-discharging-background = ${colors.orange}
+label-discharging-underline = ${colors.orange}
 label-discharging-padding = 1
 
 label-charging = %percentage%% (%time%)
-label-charging-background = ${colors.white}
+label-charging-underline = ${colors.white}
 label-charging-padding = 1
 
-label-full-background = ${colors.green}
+label-full-underline = ${colors.green}
 label-full-padding = 1
 
 [module/temperature]
@@ -164,10 +168,10 @@ warn-temperature = 60
 
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input
 
-label-background = ${colors.green}
+label-underline = ${colors.green}
 label-padding = 1
 
-label-warn-background = ${colors.red}
+label-warn-underline = ${colors.red}
 label-warn-padding = 1
 
 [settings]

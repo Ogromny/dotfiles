@@ -13,27 +13,34 @@ show_indicators = no
 line_height = 3
 padding = 6
 horizontal_padding = 6
-separator_color = "#D8DEE9"
 startup_notification = true
 frame_width = 2
-frame_color = "#8EC07C"
 
 [urgency_low]
-frame_color = "#5E81AC"
-foreground = "#D8DEE9"
-background = "#2E3440"
+# color10
+frame_color = "#5e81ac"
+# color4
+foreground = "#d8dee9"
+# color0
+background = "#2e3440"
 timeout = 4
 
 [urgency_normal]
-frame_color = "#A3BE8C"
-foreground = "#D8DEE9"
-background = "#2E3440"
+# color14
+frame_color = "#a3be8c"
+# color4
+foreground = "#d8dee9"
+# color0
+background = "#2e3440"
 timeout = 6
 
 [urgency_critical]
-frame_color = "#BF616A"
-foreground = "#D8DEE9"
-background = "#2E3440"
+# color11
+frame_color = "#bf616a"
+# color4
+foreground = "#d8dee9"
+# color0
+background = "#2e3440"
 timeout = 8
 
 # vim: ft=cfg

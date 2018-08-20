@@ -13,12 +13,38 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Source Coe Pro 10
+font pango:FuraMono Nerd Font Mono 10
 #font Fira Mono:style=Regular 96
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+
+set_from_resource $color0 i3wm.color0 #000000
+set_from_resource $color1 i3wm.color1 #000000
+set_from_resource $color2 i3wm.color2 #000000
+set_from_resource $color3 i3wm.color3 #000000
+set_from_resource $color4 i3wm.color4 #000000
+set_from_resource $color5 i3wm.color5 #000000
+set_from_resource $color6 i3wm.color6 #000000
+set_from_resource $color7 i3wm.color7 #000000
+set_from_resource $color8 i3wm.color8 #000000
+set_from_resource $color9 i3wm.color9 #000000
+set_from_resource $color10 i3wm.color10 #000000
+set_from_resource $color11 i3wm.color11 #000000
+set_from_resource $color12 i3wm.color12 #000000
+set_from_resource $color13 i3wm.color13 #000000
+set_from_resource $color14 i3wm.color14 #000000
+set_from_resource $color15 i3wm.color15 #000000
+
+# class                 border   backgr. text    indicator child_border
+client.focused          $color3  $color3  $color4 $color3    $color2
+client.focused_inactive $color2  $color2  $color4 $color2    $color1
+client.unfocused        $color0  $color0  $color4 $color0    $color0
+client.urgent           $color11 $color11 $color4 $color11   $color11
+client.placeholder      #000000  #000000  #000000 #000000    #000000
+
+client.background       $color4
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -195,3 +221,5 @@ exec --no-startup-id ~/.config/i3/wallpaper
 exec --no-startup-id killall polybar; polybar -r default
 exec --no-startup-id sudo cpupower frequency-set -u 2.00GHz
 exec --no-startup-id ~/.config/i3/blurme -t 0
+# Applications
+exec wire-desktop
