@@ -20,6 +20,9 @@ font pango:FuraMono Nerd Font Mono 10
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
+set_from_resource $background i3wm.background #000000
+set_from_resource $foreground i3wm.foreground #000000
+
 set_from_resource $color0 i3wm.color0 #000000
 set_from_resource $color1 i3wm.color1 #000000
 set_from_resource $color2 i3wm.color2 #000000
@@ -44,7 +47,7 @@ client.unfocused        $color0  $color0  $color4 $color0    $color0
 client.urgent           $color11 $color11 $color4 $color11   $color11
 client.placeholder      #000000  #000000  #000000 #000000    #000000
 
-client.background       $color4
+client.background       $background
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -197,6 +200,21 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
+bar {
+	font pango:FuraMono Nerd Font Mono 12
+	position top
+	status_command /usr/bin/i3status-rs ~/.config/i3/i3status-rs.toml
+	colors {
+                #separator $color7
+                background $color0
+                #statusline $color8
+                focused_workspace $color6 $color10
+                active_workspace $color6 $color10
+                inactive_workspace $color6 $color3
+                urgent_workspace $color6 $color11
+        }
+}
+
 for_window [class="^.*"] border pixel 2
 gaps inner 20
 smart_borders on
@@ -217,9 +235,11 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id ~/.config/i3/kbdbacklight dow
 
 # Autostart
 exec --no-startup-id compton
-exec --no-startup-id ~/.config/i3/wallpaper
-exec --no-startup-id killall polybar; polybar -r default
+exec --no-startup-id feh --bg-scale ~/Images/wallpaper_3.jpg
 exec --no-startup-id sudo cpupower frequency-set -u 2.00GHz
 exec --no-startup-id ~/.config/i3/blurme -t 0
+exec --no-startup-id fusuma -d
+exec --no-startup-id xfce4-power-manager
 # Applications
-exec wire-desktop
+exec --no-startup-id wire-desktop
+exec --no-startup-id jetbrains-toolbox

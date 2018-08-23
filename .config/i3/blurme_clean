@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-rm ../../.cache/blurme/trans-* ../../.local/share/blurme/*

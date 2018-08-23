@@ -1,0 +1,65 @@
+icons = "awesome"
+
+[theme.overrides]
+alternating_tint_bg = "#2e3440"
+alternating_tint_fg = "#d8dee9"
+
+idle_bg = "#2e3440"
+idle_fg = "#d8dee9"
+
+info_bg = "#2e3440"
+info_fg = "#d8dee9"
+
+good_bg = "#2e3440"
+good_fg = "#a3be8c"
+
+warning_bg = "#2e3440"
+warning_fg = "#ebcb8b"
+
+critical_bg = "#bf616a"
+critical_fg = "#2e3440"
+
+separator = ""
+separator_bg = "auto"
+separator_fg = "auto"
+
+[[block]]
+block = "focused_window"
+max_width = 72
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "pacman"
+interval = 30
+
+#[[block]]
+#block = "net"
+#device = "wlp3s0"
+#ip = true
+#ssid = true
+#speed_up = false
+#speed_down = false
+
+[[block]]
+block = "sound"
+step_width = 0
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 1
+format = "{max}°C"
+
+[[block]]
+block = "battery"
+show = "both"
+
+[[block]]
+block = "time"
+format = "%d/%m/%Y %H:%M:%S"
+interval = 1
