@@ -1,0 +1,48 @@
+icons = "awesome"
+
+[theme]
+name = "modern"
+
+[theme.overrides]
+separator = ""
+
+[[block]]
+block = "focused_window"
+max_width = 72
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "pacman"
+interval = 30
+
+[[block]]
+block = "net"
+device = "wlp3s0"
+ip = true
+ssid = true
+speed_up = false
+speed_down = false
+
+[[block]]
+block = "sound"
+step_width = 0
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 1
+format = "{max}°C"
+
+[[block]]
+block = "battery"
+show = "both"
+
+[[block]]
+block = "time"
+format = "%d/%m/%Y %H:%M:%S"
+interval = 1

@@ -1,0 +1,18 @@
+icons = "awesome"
+
+[theme]
+name = "solarized-dark"
+
+[theme.overrides]
+separator = ""
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"

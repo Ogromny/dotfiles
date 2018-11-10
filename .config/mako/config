@@ -1,0 +1,16 @@
+font=FuraMono Nerd Font Mono 14
+text-color=#ecf0f1
+width=550
+height=150
+border-size=0
+border-color=#2c3e50
+format=<b>%a</b><i> %s</i>\n%b
+
+[urgency=low]
+background-color=#2980b9E5
+
+[urgency=normal]
+background-color=#27ae60E5
+
+[urgency=high]
+background-color=#c0392bE5
